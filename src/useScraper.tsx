@@ -91,7 +91,7 @@ export function useScraper({
 
       try {
         // actual request to preview the link
-        let urlToCall = proxyUrl ? `${proxyUrl}/${url}` : url
+        let urlToCall = proxyUrl ? `${proxyUrl}?url=${encodeURIComponent(url)}` : url
         if (isInstagramUrl(url)) {
           const modifiedInstaUrl = `${url}?__a=1&max_id=endcursor`
           urlToCall = modifiedInstaUrl
