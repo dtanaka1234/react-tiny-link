@@ -3,6 +3,20 @@ import { IReactTinyLinkProps } from './ReactTinyLinkTypes';
 import { useScraper } from './useScraper';
 export declare const useScrapper: typeof useScraper;
 export declare const ScrapperWraper: (url: string, httpClient: any, defaultMedia: string[]) => Promise<{
+    title: string;
+    description: string;
+    image: any[];
+    video: (string | string[])[];
+    url: string;
+    type: import("./ReactTinyLinkTypes").ReactTinyLinkType;
+} | {
+    title: string;
+    description: string;
+    url: string;
+    video: any[];
+    image: (string | string[])[];
+    type: import("./ReactTinyLinkTypes").ReactTinyLinkType;
+} | {
     title: any;
     content: string;
     url: string;
@@ -11,11 +25,20 @@ export declare const ScrapperWraper: (url: string, httpClient: any, defaultMedia
     image: any[];
     type: import("./ReactTinyLinkTypes").ReactTinyLinkType;
 } | {
+    title: string;
+    description: any;
+    url: any;
+    video: string[];
+    image: any[];
+    type: import("./ReactTinyLinkTypes").ReactTinyLinkType;
+    publisher: string[];
+} | {
     title: any;
+    content: any;
     url: any;
     description: any;
-    type: import("./ReactTinyLinkTypes").ReactTinyLinkType;
     video: any[];
     image: any[];
+    type: import("./ReactTinyLinkTypes").ReactTinyLinkType;
 }>;
 export declare const ReactTinyLink: React.FC<IReactTinyLinkProps>;

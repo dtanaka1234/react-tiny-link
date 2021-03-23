@@ -2,7 +2,6 @@ import {
   isVideo,
   isAudio,
   isImage,
-  isYoutubeUrl,
   isAmazonUrl,
   isEmpty,
   isInstagramUrl,
@@ -12,7 +11,6 @@ import {
 import ScrapVideo from './Video/ScrapVideo'
 import ScrapAudio from './Audio/ScrapAudio'
 import ScrapImage from './Image/ScrapImage'
-import ScrapYoutube from './Youtube/ScrapYoutube'
 import ScrapAmazon from './Amazon/ScrapAmazon'
 import ScrapDefault from './Default/ScrapDefault'
 import ScrapInstagram from './Instagram/ScrapInstagram'
@@ -33,8 +31,6 @@ export default async (url: string, httpClient, defaultMedia: string[]) => {
       return await ScrapImage(url, defaultMedia)
     } else if (isInstagramUrl(url)) {
       return await ScrapInstagram(url, data, defaultMedia)
-    } else if (isYoutubeUrl(url)) {
-      return await ScrapYoutube(url, htmlDoc, defaultMedia)
     } else if (isAmazonUrl(url)) {
       return await ScrapAmazon(url, htmlDoc, defaultMedia)
     } else if (isBoardGameGeekUrl(url)) {

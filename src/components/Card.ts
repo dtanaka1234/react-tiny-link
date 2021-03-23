@@ -89,7 +89,7 @@ export const ContentWrapper = styled('div')`
   ${({ cardSize }) => isLarge(cardSize) && largeContentStyle};
 `
 
-export const Header = styled('header')`
+export const Header = styled('div')`
   text-align: left;
   font-size: 16px;
   font-weight: bold;
@@ -108,7 +108,7 @@ export const Content = styled('div')`
   ${({ cardSize }) => (!isLarge(cardSize) ? smallDescriptionStyle : largeDescriptionStyle)};
 `
 
-export const Footer = styled('footer')`
+export const Footer = styled('div')`
   text-align: left;
   font-size: 12px;
   margin: 0;
