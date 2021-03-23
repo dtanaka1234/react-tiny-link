@@ -1,6 +1,6 @@
 {
-  "name": "react-tiny-link",
-  "version": "3.6.1",
+  "name": "lets-react-tiny-link",
+  "version": "3.6.6",
   "main": "lib/index.js",
   "license": "MIT",
   "keywords": [

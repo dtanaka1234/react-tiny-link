@@ -2,6 +2,7 @@ import * as React from 'react'
 import { render } from 'react-dom'
 import { Hover } from './Hover'
 import { ReactTinyLink } from '../../lib'
+import { LetsReactTinyLink } from '../../lib';
 
 const Demo: React.FC = () => (
   <>
@@ -54,7 +55,7 @@ const Demo: React.FC = () => (
       />
     </Hover>
     <Hover constant={<h3>Cache responses</h3>}>
-      <ReactTinyLink
+      <LetsReactTinyLink
         cardSize="small"
         showGraphic={true}
         maxLine={2}
