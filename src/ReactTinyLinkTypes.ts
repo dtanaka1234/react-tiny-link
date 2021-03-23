@@ -42,6 +42,7 @@ export interface IReactTinyLinkProps {
     type: ReactTinyLinkType
   }>
   defaultMedia?: string
+  useUrlParam: boolean
 }
 
 export interface IReactTinyLinkData {

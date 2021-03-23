@@ -53,6 +53,7 @@ export type UseScraperConfig = {
   onError?: (error: Error) => void
   /** Called when the fetch succeeded with the resulting data */
   onSuccess?: (response: IReactTinyLinkData) => void
+  useUrlParam: boolean
 }
 
 type CacheMap = Map<string, IReactTinyLinkData>
@@ -68,6 +69,7 @@ export function useScraper({
   onError,
   onSuccess,
   requestHeaders,
+  useUrlParam = false,
 }: UseScraperConfig): ResponseState<IReactTinyLinkData, Error> {
   // Alias to IState
   type State = IState<IReactTinyLinkData, Error>
@@ -91,7 +93,9 @@ export function useScraper({
 
       try {
         // actual request to preview the link
-        let urlToCall = proxyUrl ? `${proxyUrl}?url=${encodeURIComponent(url)}` : url
+        let urlToCall = proxyUrl ?
+            useUrlParam ? `${proxyUrl}?url=${encodeURIComponent(url)}` : `${proxyUrl}/${url}`
+            : url
         if (isInstagramUrl(url)) {
           const modifiedInstaUrl = `${url}?__a=1&max_id=endcursor`
           urlToCall = modifiedInstaUrl
